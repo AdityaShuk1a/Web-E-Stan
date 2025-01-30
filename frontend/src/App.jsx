@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react'
 import Preloader from './components/Preloader'
 import { PreloaderAnimation } from './animations/Animations'
-import Lenis from 'lenis'
-import { use } from 'react'
+import LandingPage from './pages/LandingPage.jsx'
+
 const App = () => {
   const preLoaderRef = useRef()
   useEffect(() => {
@@ -10,13 +10,12 @@ const App = () => {
 
     }
   },[])
+  
   return (
-    <>
-    <div className='relative'  >
-    <Preloader />
+    <div className="app-container">
+      <Preloader />
+      <LandingPage />
     </div>
-    </>
-    
   )
 }
 
