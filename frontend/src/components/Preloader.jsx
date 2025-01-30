@@ -3,7 +3,7 @@ import React from 'react'
 const Preloader = () => {
   return (
     <>
-    <div className='PreloaderParent z-[999] absolute h-[100vh] w-screen bg-red-400 ' >
+    <div className='PreloaderParent z-[9999] absolute h-[100vh] w-screen bg-red-400 ' >
     <div className='h-[100vh] flex flex-col left-[15%]  absolute w-[7vh]'>
         <img className=' StarOne absolute top-[13%]' src="\src\assets\star.png" alt="" /><img className='StarTwo absolute top-[53%]' src="\src\assets\star.png" alt="" /><img className='StarThree absolute top-[83%]' src="\src\assets\star.png" alt="" />
       </div>

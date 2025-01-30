@@ -14,12 +14,16 @@ const App = () => {
   },[])
   
   return (
+    <>
+    <Preloader />
     <div className="app-container">
-      {/* <Preloader /> */}
-      {/* <LandingPage /> */}
+      
+      <LandingPage />
       {/* <SubjectsCard /> */}
-      <SubjectPage />
+      {/* <SubjectPage /> */}
     </div>
+    </>
+    
   )
 }
 

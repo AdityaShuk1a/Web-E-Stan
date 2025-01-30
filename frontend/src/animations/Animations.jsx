@@ -49,13 +49,28 @@ export const PreloaderAnimation = () => {
         ease: 'sine.in',
     })
     
-    tl.from('navbarContactBtn', {
-        duration: 1,
-        y: -100,
+    tl.fromTo('.LogoContainer', {
         opacity: 0,
-        ease: 'power4.inOut',
-        stagger: 1.2,
+        y: -30,
+    }, {
+        duration: 1,
+        y: 0,
+        opacity: 1,
+        rotate: 360,
+        ease : "sine.inOut"
     })
+    tl.from('.BtnsContainer', {
+        duration: 1,
+        opacity: 0,
+        y: "-100%",
+        ease: 'sine.inOut',
+    })
+    tl.from('.NavbarLine', {
+        duration: 1,
+        opacity: 0,
+        x: "-100%",
+        ease: 'sine.inOut',
+    }, "-=1")
 }
 
 
