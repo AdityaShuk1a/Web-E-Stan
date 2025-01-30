@@ -3,6 +3,7 @@ import Preloader from './components/Preloader'
 import { PreloaderAnimation } from './animations/Animations'
 import LandingPage from './pages/LandingPage.jsx'
 import SubjectsCard from './components/SubjectsCard.jsx'
+import SubjectPage from './pages/SubjectPage.jsx'
 
 const App = () => {
   const preLoaderRef = useRef()
@@ -16,7 +17,8 @@ const App = () => {
     <div className="app-container">
       {/* <Preloader /> */}
       {/* <LandingPage /> */}
-      <SubjectsCard />
+      {/* <SubjectsCard /> */}
+      <SubjectPage />
     </div>
   )
 }
