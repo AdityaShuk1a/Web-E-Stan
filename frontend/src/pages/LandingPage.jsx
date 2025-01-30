@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar.jsx'
 const LandingPage = () => {
   return (
     <div className="LandingPageBase bg-gray-50">
-      <Navbar />
+      
       <div className="TagContainer">
         <span>M</span>
         <span>O</span>

@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <>
     <nav className="Navbar flex flex-col sm:flex-row justify-evenly items-center  shadow-lg rounded-b-2xl" style={{ padding: '2vh 2vw' }}>
-      <button className="LogoContainer flex items-center justify-center w-full sm:w-auto mb-3 sm:mb-0">
+      <button className="LogoContainer flex items-center  justify-center w-full sm:w-auto mb-3 sm:mb-0">
         <img 
           src="src/assets/moon.png" 
           alt="Logo" 

@@ -1,5 +1,23 @@
 import { gsap } from "gsap";
 
+export const navbarUp = () => {
+    gsap.to('.Navbar', {
+      y: -300,
+      duration: 0.5,
+      opacity: 0
+      
+    });
+  };
+  
+  export const navbarDown = () => {
+    gsap.to('.Navbar', {
+      y: 0,
+      duration: 0.5,
+      opacity: 1
+      
+    });
+  };
+
 export const PreloaderAnimation = () => {
     gsap.from('.StarOne', {
         duration: 1,
