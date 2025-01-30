@@ -5,14 +5,24 @@ import LandingPage from './pages/LandingPage.jsx'
 import Navbar from './components/Navbar.jsx'
 import SubjectsCard from './components/SubjectsCard.jsx'
 import SubjectPage from './pages/SubjectPage.jsx'
-
+import Lenis from "@studio-freight/lenis"
 const App = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const preLoaderRef = useRef()
   useEffect(() => {
-    if(PreloaderAnimation()){
+    const lenis = new Lenis({
+      duration: 1.2, // Smooth scrolling speed
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing function
+      smoothWheel: true,
+    });
 
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     }
+
+    requestAnimationFrame(raf);
+    PreloaderAnimation()
   },[])
   useEffect(() => {
     window.addEventListener('wheel', (e) => {

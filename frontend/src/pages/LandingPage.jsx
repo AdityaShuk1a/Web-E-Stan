@@ -1,5 +1,6 @@
 import React from 'react'
 import Navbar from '../components/Navbar.jsx'
+import SubjectsCard from '../components/SubjectsCard.jsx'
 
 const LandingPage = () => {
   return (
@@ -23,6 +24,7 @@ const LandingPage = () => {
         <span>M</span>
         <span>Y</span>
       </div>
+      
     </div>
   )
 }
