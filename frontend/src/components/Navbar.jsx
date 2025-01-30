@@ -11,10 +11,10 @@ const Navbar = () => {
         />
       </button>
       <div className="navbar-buttons-container flex flex-col sm:flex-row gap-0 sm:gap-16 w-full sm:w-auto items-center justify-evenly bg-white/20 backdrop-blur-sm p-4 rounded-xl border-2 border-white/30">
-        <button className="navbar-contact-btn flex justify-evenly items-center w-3/4 sm:w-auto px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 text-sm sm:text-lg md:text-xl text-white font-semibold rounded-xl hover:scale-105 transition-all duration-200 shadow-md">
+        <button className="navbar-contact-btn flex justify-evenly items-center w-1/4 sm:w-auto px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 text-sm sm:text-lg md:text-xl text-white font-semibold rounded-xl hover:scale-105 transition-all duration-200 shadow-md">
           Contact Us
         </button>
-        <button className="navbar-logout-btn flex justify-evenly items-center w-3/4 sm:w-auto px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 text-sm sm:text-lg md:text-xl text-white font-semibold rounded-xl hover:scale-105 transition-all duration-200 shadow-md">
+        <button className="navbar-logout-btn flex justify-evenly items-center w-1/4 sm:w-auto px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 text-sm sm:text-lg md:text-xl text-white font-semibold rounded-xl hover:scale-105 transition-all duration-200 shadow-md">
           Log Out
         </button>
       </div>
