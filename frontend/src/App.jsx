@@ -15,8 +15,8 @@ const App = () => {
   return (
     <div className="app-container">
       {/* <Preloader /> */}
-      {/* <LandingPage /> */}
-      <SubjectsCard />
+      <LandingPage />
+      {/* <SubjectsCard /> */}
     </div>
   )
 }
