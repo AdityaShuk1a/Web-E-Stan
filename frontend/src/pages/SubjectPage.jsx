@@ -4,22 +4,16 @@ const SubjectPage = () => {
   const [isGlowing, setIsGlowing] = useState(false);
 
   return (
-    <div className="h-[100vh] bg-gray-100 ">
+    <div className="h-[100vh] bg-gray-100 flex flex-col">
       {/* Main container with full height */}
-      <div className="flex flex-col h-full" style={{
-        margin : "5vh"
-      }} >
+      <div className="flex flex-col h-full px-4" >
         {/* Header Section - 20% of viewport height */}
-        <div className="h-[20vh] bg-blue-50 flex flex-col sm:flex-row justify-between items-center px-8 py-6 shadow-md m-4 rounded-xl">
-          <h1 className="text-6xlxl sm:text-6xl font-bold mb-4 sm:mb-0 text-blue-800"  style={{
-                margin : "2vh"
-              }}  >Subject Name</h1>
+        <div className="h-[20vh] bg-blue-50 flex flex-col sm:flex-row justify-between items-center px-8 py-6 shadow-md rounded-xl">
+          <h1 className="text-6xl font-bold mb-4 sm:mb-0 text-blue-800">Subject Name</h1>
           <button 
-            onMouseEnter={() => setIsGlowing(!isGlowing)} onMouseLeave={() => setIsGlowing(!isGlowing)}
-            className="flex items-center h-[4vh] w-fit gap-2 px-8 py-4 rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition-all shadow-lg " style={{
-                padding : "3vh",
-                margin : "2vh"
-            }}
+            onMouseEnter={() => setIsGlowing(!isGlowing)} 
+            onMouseLeave={() => setIsGlowing(!isGlowing)}
+            className="flex items-center h-[4vh] w-fit gap-2 px-8 py-4 rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition-all shadow-lg"
           >
             Access Knowledge
             <svg 
