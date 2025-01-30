@@ -18,6 +18,9 @@ const Navbar = () => {
           Log Out
         </button>
       </div>
+
+{/* testing git  */}
+
     </nav>
   )
 }
