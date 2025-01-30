@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 export const PreloaderAnimation = () => {
     const tl = gsap.timeline();
     tl.from('.PreloaderImage', {
-        duration: 2,
+        duration: 1,
         opacity: 0,
         rotate: 360,
         scale: 1.8,
@@ -14,12 +14,12 @@ export const PreloaderAnimation = () => {
         ease: 'power4.out',
         duration: 1,
     })
-    // tl.to('.PreloaderParent', {
-    //     duration: 1,
-    //     delay: 1,
-    //     y: "-100%",
-    //     ease: 'power4.out',
-    // })
+    tl.to('.PreloaderParent', {
+        duration: 1,
+        delay: 0.5,
+        y: "-100%",
+        ease: 'power4.out',
+    })
 
 
 }
