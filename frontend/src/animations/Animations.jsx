@@ -1,5 +1,23 @@
 import { gsap } from "gsap";
 
+export const navbarUp = () => {
+    gsap.to('.Navbar', {
+      y: -300,
+      duration: 0.5,
+      opacity: 0
+      
+    });
+  };
+  
+  export const navbarDown = () => {
+    gsap.to('.Navbar', {
+      y: 0,
+      duration: 0.5,
+      opacity: 1
+      
+    });
+  };
+
 export const PreloaderAnimation = () => {
     gsap.from('.StarOne', {
         duration: 1,
@@ -48,5 +66,29 @@ export const PreloaderAnimation = () => {
         y: "-100%",
         ease: 'sine.in',
     })
+    
+    tl.fromTo('.LogoContainer', {
+        opacity: 0,
+        y: -30,
+    }, {
+        duration: 1,
+        y: 0,
+        opacity: 1,
+        rotate: 360,
+        ease : "sine.inOut"
+    })
+    tl.from('.BtnsContainer', {
+        duration: 1,
+        opacity: 0,
+        y: "-100%",
+        ease: 'sine.inOut',
+    })
+    tl.from('.NavbarLine', {
+        duration: 1,
+        opacity: 0,
+        x: "-100%",
+        ease: 'sine.inOut',
+    }, "-=1")
 }
+
 
