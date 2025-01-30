@@ -7,6 +7,7 @@ import SubjectsCard from './components/SubjectsCard.jsx'
 import SubjectPage from './pages/SubjectPage.jsx'
 import Lenis from "@studio-freight/lenis"
 import CustomCursor from './components/CustomCursor.jsx'
+import SubjectSwiper from './components/SubjectSwiper.jsx'
 const App = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const preLoaderRef = useRef()
@@ -37,9 +38,19 @@ const App = () => {
         navbarDown();
       }
     });
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
+    return () => {
+      window.removeEventListener('mousemove', (e) => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+      });
+      window.removeEventListener('wheel', (e) => {
+        if(e.deltaY > 0){
+          
+          navbarUp();
+        } else {
+          navbarDown();
+        }
+      });
+    }
   }, [])
 
   return (
@@ -48,10 +59,11 @@ const App = () => {
     <Preloader />
     <div className="app-container">
     <Navbar />
-      <LandingPage />
+      <LandingPage /> 
       {/* <SubjectsCard /> */}
-      {/* <SubjectPage /> */}
-    </div>
+       {/* <SubjectPage /> */}
+     </div>
+    {/* <SubjectSwiper /> */}
     </>
     
   )

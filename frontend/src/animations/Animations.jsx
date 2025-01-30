@@ -91,18 +91,30 @@ export const PreloaderAnimation = () => {
     }, "-=1")
 
     tl.from('.LandingTitle div', {
-        duration: 1,
+        duration: 0.5,
         opacity: 0,
         y: 100,
-        stagger: 0.8,
+        stagger: 0.5,
         ease: 'sine.inOut',
-    }, )
+    }, "-=1")
     tl.from('.LandingMoon', {
-        duration: 1,
+        duration: 0.5,
         opacity: 0,
         y: 100,
         ease: 'sine.inOut',
-    }, )
+    },"-=1" )
+    tl.fromTo('.LandingProps', { 
+        opacity : 0,
+        scale : 0,
+    },{
+        duration: 0.5,
+        opacity : 1,
+        scale : 1,
+        stagger: 0.1,
+        ease: 'sine.inOut',
+        stagger: 0.5,
+        
+    }, "-=2")
 
 }
 
