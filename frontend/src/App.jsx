@@ -1,16 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import Preloader from './components/Preloader'
 import { PreloaderAnimation } from './animations/Animations'
+import Lenis from 'lenis'
+import { use } from 'react'
 const App = () => {
+  const preLoaderRef = useRef()
   useEffect(() => {
-    PreloaderAnimation()
+    if(PreloaderAnimation()){
+
+    }
   },[])
   return (
-
-    
     <>
-      <Preloader />
-
+    <div className='relative'  >
+    <Preloader />
+    </div>
     </>
     
   )

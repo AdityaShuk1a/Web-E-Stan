@@ -1,6 +1,34 @@
 import { gsap } from "gsap";
 
 export const PreloaderAnimation = () => {
+    gsap.from('.StarOne', {
+        duration: 1,
+        ease: 'sine.inOut',
+        scale: 1.5,
+        
+        transform: "translateX(-30%) translateY(40%)",
+        repeat: -1,
+        yoyo: true,
+        rotate: 230,
+    })
+    gsap.from('.StarTwo', {
+        duration: 1,
+        scale: 2.1,
+        ease: 'sine.inOut',
+        transform: "translateX(60%) translateY(-40%)",
+        repeat: -1,
+        yoyo: true,
+        rotate: 230,
+    })
+    gsap.from('.StarThree', {
+        duration: 1,
+        scale: 1.2,
+        ease: 'sine.inOut',
+        transform: "translateX(70%) translateY(-50%)",
+        repeat: -1,
+        yoyo: true,
+        rotate: 230,
+    })
     const tl = gsap.timeline();
     tl.from('.PreloaderImage', {
         duration: 1,
@@ -18,8 +46,7 @@ export const PreloaderAnimation = () => {
         duration: 1,
         delay: 0.5,
         y: "-100%",
-        ease: 'power4.out',
+        ease: 'sine.in',
     })
-
-
 }
+
