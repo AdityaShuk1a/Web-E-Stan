@@ -8,6 +8,7 @@ const topics = [
 
 const SubjectPage = () => {
   return (
+<<<<<<< HEAD
     <div className="MainContainer h-[100vh] bg-gray-100 flex flex-col">
       {/* Header Section */}
       <div className="HeaderSection h-[20vh] bg-blue-50 flex justify-between items-center px-8 py-6 shadow-md m-4 rounded-xl">
@@ -16,6 +17,29 @@ const SubjectPage = () => {
           Access Knowledge
         </button>
       </div>
+=======
+    <div className="h-[100vh] bg-gray-100 flex flex-col">
+      {/* Main container with full height */}
+      <div className="flex flex-col h-full px-4" >
+        {/* Header Section - 20% of viewport height */}
+        <div className="h-[20vh] bg-blue-50 flex flex-col sm:flex-row justify-between items-center px-8 py-6 shadow-md rounded-xl">
+          <h1 className="text-6xl font-bold mb-4 sm:mb-0 text-blue-800">Subject Name</h1>
+          <button 
+            onMouseEnter={() => setIsGlowing(!isGlowing)} 
+            onMouseLeave={() => setIsGlowing(!isGlowing)}
+            className="flex items-center h-[4vh] w-fit gap-2 px-8 py-4 rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition-all shadow-lg"
+          >
+            Access Knowledge
+            <svg 
+              className={`w-6 h-6 text-4xl ${isGlowing ? 'text-yellow-300 animate-pulse' : 'text-gray-200'}`}
+              fill="currentColor" 
+              viewBox="0 0 20 20"
+            >
+              <path d="M11 3a1 1 0 10-2 0v1a1 1 0 102 0V3zM15.657 5.757a1 1 0 00-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zM18 10a1 1 0 01-1 1h-1a1 1 0 110-2h1a1 1 0 011 1zM5.05 6.464A1 1 0 106.464 5.05l-.707-.707a1 1 0 00-1.414 1.414l.707.707zM5 10a1 1 0 01-1 1H3a1 1 0 110-2h1a1 1 0 011 1zM8 16v-1h4v1a2 2 0 11-4 0zM12 14c.015-.34.208-.646.477-.859a4 4 0 10-4.954 0c.27.213.462.519.476.859h4.002z"/>
+            </svg>
+          </button>
+        </div>
+>>>>>>> 6881b2b83c5c3ecd2368d8d016b6fd7a4fb9bef0
 
       {/* Content Section */}
       <div className="ContentSection flex flex-col sm:flex-row gap-8 p-8 flex-grow">
