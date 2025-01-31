@@ -6,6 +6,7 @@ import SubjectPage from './pages/SubjectPage.jsx'
 import Lenis from "@studio-freight/lenis"
 import CustomCursor from './components/CustomCursor.jsx'
 import ChapterPage from './pages/ChapterPage.jsx'
+import Footer from './components/Footer.jsx'
 const App = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const preLoaderRef = useRef()
@@ -48,6 +49,7 @@ const App = () => {
       {/* <SubjectsCard /> */}
       {/* <SubjectPage /> */}
       <ChapterPage />
+      <Footer />
     </div>
   )
 }
