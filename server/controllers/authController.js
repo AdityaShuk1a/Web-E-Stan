@@ -1,4 +1,4 @@
-import { userTable } from "../models/userModel.js";
+import { parentTable } from "../models/parentModel.js";
 import bcrypt from "bcrypt";
 import nodemailer from "nodemailer";
 import jwt from "jsonwebtoken";
@@ -13,12 +13,12 @@ export const userRegister = async (req, res) => {
         if (!userName || !userEmail || !userPassword) {
             return res.status(400).send({ success: false, message: `fill out the details please` });
         }
-        const userExists = await userTable.findOne({ userName })
+        const userExists = await parentTable.findOne({ userName })
         if (userExists) {
             res.status(400).send({ success: false, message: `EMAIL ALREADY EXISTS` })
         };
         const hashedPassword = await bcrypt.hash(userPassword, 10); // 5 se 15 k beech m kch bhi chclega  10 is usually enuff and 5 is less secrtooy
-        const newUser = new userTable({
+            const newUser = new parentTable({
             userName,
             userEmail,
             userPassword: hashedPassword,
@@ -66,7 +66,7 @@ export const userLogin = async (req, res) => {
     }
     try {
         const isValid = true;
-        const newUser = await userTable.findOne({ userEmail });
+        const newUser = await parentTable.findOne({ userEmail });
         if (!newUser) {
             isValid = false;
         }
@@ -98,7 +98,6 @@ export const userLogin = async (req, res) => {
         });
     }
 };
-
 export const logout = async (req, res) => {
     try {
         res.clearCookie('userToken', {
@@ -116,8 +115,6 @@ export const logout = async (req, res) => {
         });
     }
 }; 
-
-
 const genereateOTP = (len) => {
     const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
     let otp = "";
@@ -132,7 +129,7 @@ export const sendOtp = async (req, res) => {
     //userId is being added to the req body in userAuth in middleware. after decoding the jwttoken from the cookies
     try {
         const { userId } = req.body;
-        const newUser = await userTable.findById(userId);
+        const newUser = await parentTable.findById(userId);
         if (newUser.isVerified) {
             return res.status(400).send({ success: false, message: `Your email-${newUser.userEmail} is already verified chill out :)` });
         }
@@ -159,7 +156,7 @@ export const sendOtp = async (req, res) => {
 export const verifyOtp = async (req, res) => {
     const { userId, userOtp } = req.body;
     try {
-        const newUser = await userTable.findById(userId);
+        const newUser = await parentTable.findById(userId);
         if (!newUser ) {
             return res.status(400).send({ success: false, message: `User ID ${userId} does not exist` });
         }        
@@ -203,7 +200,7 @@ export const isVerified = async (req, res) => {
 
 /*
 const { userId } = req.body;
-const newUser = await userTable.findById(userId);
+const newUser = await parentTable.findById(userId);
 if (!newUser) {
 return res.status(400).send({ success: false, message: `User ID ${userId} does not exist` });
 }
@@ -220,7 +217,7 @@ export const sendResetOtp = async (req, res) => {
         return res.status(400).send({ message: `Email is required` });
     }
     try {
-        const newUser = await userTable.findOne(userEmail);
+        const newUser = await parentTable.findOne(userEmail);
         if (!newUser) {
             return res.status(400).send({ success: false, message: `User not found` });
         }
@@ -245,7 +242,7 @@ export const sendResetOtp = async (req, res) => {
 export const verifyResetOtp = async (req, res) => {
     const { userId, userOtp, newUserPassword } = req.body;
     try {
-        const newUser = await userTable.findById(userId);
+        const newUser = await parentTable.findById(userId);
         if (!newUser) {
             return res.status(400).send({ success: false, message: `User ID ${userId} does not exist` });
         }
