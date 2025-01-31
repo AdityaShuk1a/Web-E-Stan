@@ -1,10 +1,10 @@
-import { userTable } from "../models/userModel.js";
+import { parentTable } from "../models/parentModel.js";
 
 export const getUserData =async (req , res) => {
 	
 	try {
 		const { userId } = req.body;
-		const newUser = await userTable.findById(userId);
+		const newUser = await parentTable.findById(userId);
 		if (!newUser) {
 			return res.status(400).send({ success: false, message: `User not found` });
 		}

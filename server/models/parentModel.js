@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const userSchema = new mongoose.Schema({
+const parentSchema = new mongoose.Schema({
     userName: {
         type: String,
         required: true,
@@ -61,10 +61,15 @@ const userSchema = new mongoose.Schema({
     userSignupDate: {
         type: Date,
         default: Date.now(),
+    },
+    children: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'childTable'
     }
+
 });
 
-export const userTable= mongoose.model('userTable',userSchema)
+export const parentTable= mongoose.model('parentTable',parentSchema)
 
 
 /*

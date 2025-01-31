@@ -46,7 +46,6 @@ const RisingMoon = () => {
         trigger: '.LandingMoonParent',
         start: 'top center',
         end: 'bottom center',
-        markers: true,
         scrub: 8,
         markers: true },
     } )
