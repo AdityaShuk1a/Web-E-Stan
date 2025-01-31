@@ -20,7 +20,7 @@ const LoginPage = () => {
     const loginData = { email: loginEmail, password: loginPassword };
     try {
       await axios.post('http://localhost:5000/posttask', loginData);
-      history.push('/UserPage');
+      
     } catch (error) {
       console.error('Login error:', error);
     }
@@ -40,7 +40,6 @@ const LoginPage = () => {
     };
     try {
       await axios.post('http://localhost:5000/posttask', signupData);
-      history.push('/UserPage');
     } catch (error) {
       console.error('Signup error:', error);
     }
