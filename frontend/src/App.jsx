@@ -2,8 +2,6 @@ import React, { useEffect, useRef, useState } from 'react'
 import Preloader from './components/Preloader'
 import { PreloaderAnimation, navbarUp, navbarDown } from './animations/Animations'
 import LandingPage from './pages/LandingPage.jsx'
-import Navbar from './components/Navbar.jsx'
-import SubjectsCard from './components/SubjectsCard.jsx'
 import SubjectPage from './pages/SubjectPage.jsx'
 import Lenis from "@studio-freight/lenis"
 import CustomCursor from './components/CustomCursor.jsx'

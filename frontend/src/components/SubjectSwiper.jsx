@@ -13,27 +13,17 @@ const SubjectSwiper = () => {
     const subjects = [
         {
             id: 1,
-            title: "Physics",
+            title: "English",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
         },
         {
             id: 2,
-            title: "Chemistry", 
+            title: "Science", 
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
         },
         {
             id: 3,
             title: "Mathematics",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 4,
-            title: "Biology",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 5,
-            title: "SST",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
         }
 

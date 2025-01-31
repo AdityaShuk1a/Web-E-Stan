@@ -74,6 +74,7 @@ useEffect(() => {
       trigger: '.PageTitle',
       start: 'top center',
       end: 'bottom top',
+      toggleActions: "play none none reverse"
     
     }
   })
@@ -90,6 +91,7 @@ useEffect(() => {
       trigger: '.Description',
       start: 'top center', 
       end: 'bottom top',
+      toggleActions: "play none none reverse"
       
     }
   })

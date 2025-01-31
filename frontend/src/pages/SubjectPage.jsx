@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const topics = [
   "Algebra", "Geometry", "Trigonometry", "Calculus", "Probability",
@@ -6,7 +6,7 @@ const topics = [
   "Set Theory"
 ];
 const SubjectPage = () => {
-  const [isGlowing, setIsGlowing] = useState(false);
+  const [isGlowing, setIsGlowing] = useState(false); // Added state for glowing effect
 
   return (
     <div className="h-[100vh] bg-gray-100 flex flex-col">
@@ -16,8 +16,8 @@ const SubjectPage = () => {
         <div className="h-[20vh] bg-blue-50 flex flex-col sm:flex-row justify-between items-center px-8 py-6 shadow-md rounded-xl">
           <h1 className="text-6xl font-bold mb-4 sm:mb-0 text-blue-800">Subject Name</h1>
           <button 
-            onMouseEnter={() => setIsGlowing(!isGlowing)} 
-            onMouseLeave={() => setIsGlowing(!isGlowing)}
+            onMouseEnter={() => setIsGlowing(true)} 
+            onMouseLeave={() => setIsGlowing(false)}
             className="flex items-center h-[4vh] w-fit gap-2 px-8 py-4 rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition-all shadow-lg"
           >
             Access Knowledge
@@ -30,7 +30,6 @@ const SubjectPage = () => {
             </svg>
           </button>
         </div>
-        
         {/* Content Section */}
         <div className="ContentSection flex flex-col sm:flex-row gap-8 p-8 flex-grow">
           {/* Left Side - Topics Section */}
@@ -41,7 +40,6 @@ const SubjectPage = () => {
                 <h2 className="DropdownTitle text-xl font-semibold text-purple-800">Select Class</h2>
               </div>
             </div>
-            
             {/* Topics Grid (Uniform Tile Size) */}
             <div className="flex-grow overflow-y-auto min-h-0 mt-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -49,7 +47,9 @@ const SubjectPage = () => {
                   <div
                     key={index}
                     className="TopicItem bg-green-50 flex items-center justify-center rounded-xl shadow-md hover:shadow-xl transition-all cursor-pointer border-2 border-green-200 p-6"
-                    style={{ height: "18vh" }}
+                    style={{
+                      height: "18vh", // Fixed uniform height
+                    }}
                   >
                     <h3 className="TopicTitle text-lg font-medium text-green-800">{topic}</h3>
                   </div>
@@ -57,7 +57,6 @@ const SubjectPage = () => {
               </div>
             </div>
           </div>
-          
           {/* Right Side - Chatbot */}
           <div className="RightSide w-full sm:w-1/2 bg-amber-50 rounded-xl shadow-lg p-8 flex flex-col border-2 border-amber-200">
             <div className="ChatArea flex-grow flex flex-col">
