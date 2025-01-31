@@ -15,7 +15,7 @@ export const userRegister = async (req, res) => {
         }
         const userExists = await parentTable.findOne({ userName })
         if (userExists) {
-            res.status(400).send({ success: false, message: `EMAIL ALREADY EXISTS` })
+            res.status(400).send({ success: false, message: `USERNAME WITH ${userName} ALREADY EXISTS` })
         };
         const hashedPassword = await bcrypt.hash(userPassword, 10); // 5 se 15 k beech m kch bhi chclega  10 is usually enuff and 5 is less secrtooy
             const newUser = new parentTable({
@@ -49,7 +49,7 @@ export const userRegister = async (req, res) => {
         };
         await transporter.sendMail(signupMail);
         
-        return res.status(200).send({ success: true, message: `signup successful\nWelcome Email sent` });
+        return res.status(200).send({ success: true, message: `signup successful\nWelcome Email sent`,body:newUser });
         ī
     } catch (error) {
         console.error(error);
