@@ -1,7 +1,37 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import UserCard from '../components/UserCard'
+import {gsap} from "gsap"
 
 const UserPage = () => {
+  useEffect(() => {
+    const tl = gsap.timeline()
+    tl.fromTo('.title', {
+      opacity : 0,
+      y : -100,
+      duration : 1,
+      ease : "power2.out"
+    }, {
+      opacity : 1,
+      y : 0,
+      duration : 1,
+      ease : "power2.out",
+      toggleActions : "play reverse play reverse"
+    })
+    tl.fromTo('.users', {
+      opacity : 0,
+      y : -100,
+      duration : 1,
+      ease : "power2.out"
+    }, {
+      opacity : 1,
+      y : 0,
+      duration : 1,
+      ease : "power2.out",
+      stagger : 0.5,
+      toggleActions : "play reverse play reverse"
+    })
+
+  })
 
   const useData = [
     {
@@ -26,11 +56,11 @@ const UserPage = () => {
 
   return (
     <>
-    <div className='flex flex-col bg-amber-400 h-[100vh] items-center   w-screen' >
+    <div className='flex flex-col h-[100vh] items-center   w-screen' >
         <div className='justify-start text-5xl w-full'  style={{
           padding : "4vh"
         }} >
-          <div className='flex justify-between w-full ' >
+          <div className='title flex justify-between w-full text-white font-medium' >
           <h1>
 
             Hello User!
@@ -48,7 +78,7 @@ const UserPage = () => {
           </button>
           </div>
         </div>
-        <div className='w-screen flex gap-[5vh] overflow-x-auto' >
+        <div className='users w-screen flex gap-[5vh] overflow-x-auto' >
         {useData.map((data) => (
           <UserCard key={data.id} user={data} />
         ))}

@@ -1,15 +1,44 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'; // Added useEffect import
 import SubjectsCard from './SubjectsCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import {gsap} from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
 const SubjectSwiper = () => {
-    
+    useEffect(() => { // Moved useEffect inside the component
+        const tl = gsap.timeline();
+        tl.fromTo('.Slider', {
+            x : -100,
+            duration : 1,
+            ease : "power2.out",
+            scrollTrigger : {
+                trigger : '.Slider',
+                start : "top 50%",
+                end : "bottom bottom",
+                scrub : 1,
+                pin : true,
+            },
+        } , {
+            x : 0,
+            duration : 1,
+            ease : "power2.out",
+            scrollTrigger : {
+                trigger : '.Slider',
+                start : "top 50%",
+                end : "bottom bottom",
+                scrub : 1,
+                pin : true,
+            }
+        }
+    );
+    }, []); // Added dependency array to useEffect
+
     const subjects = [
         {
             id: 1,
@@ -26,41 +55,19 @@ const SubjectSwiper = () => {
             title: "Mathematics",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
         }
-
     ];
 
     return (
-        // <div className="w-full ">
-            <Swiper
-                modules={[Navigation, Pagination, Autoplay]}
-                spaceBetween={20}
-                navigation
-                pagination={{ clickable: true, dynamicBullets: true }}
-                autoplay={{ delay: 3000, disableOnInteraction: false }}
-                breakpoints={{
-                    320: { slidesPerView: 1, spaceBetween: 15 },
-                    640: { slidesPerView: 2, spaceBetween: 20 },
-                    1024: { slidesPerView: 3, spaceBetween: 25 }
-                }}
-                className="mySwiper py-8"
-            >
-                {subjects.map((subject) => {
-                    console.log(subject); // ✅ Log outside JSX
-                    return (
-                        <div className='gap-[4vh]  ' style={{
-                            marginRight: "20vh",
-                        }} >
-                            <SwiperSlide className='SubjectCard '  key={subject.id} style={{
-                                margin : "7vh"
-                            }}>
-                            <SubjectsCard subject={subject} />
-                        </SwiperSlide>
-                        </div>
-                        
-                    );
-                })}
-            </Swiper>
-        // </div>
+        <div className="Slider w-full flex justify-center items-center flex-nowrap overflow-x-auto">
+            {subjects.map((subject) => {
+                console.log(subject); // ✅ Log outside JSX
+                return (
+                    <div key={subject.id} className='gap-[4vh]' style={{ marginRight: "20vh" }}>
+                        <SubjectsCard subject={subject} />
+                    </div>
+                );
+            })}
+        </div>
     );
 };
 

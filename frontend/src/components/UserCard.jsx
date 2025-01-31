@@ -56,7 +56,7 @@ const UserCard = ({user}) => {
             
             
           <CustomButton 
-            buttonName="Click Me"
+            buttonName="Start Learning"
             style={{
               backgroundColor: "#4299E1",
               color: "#FFFFFF",
@@ -67,7 +67,7 @@ const UserCard = ({user}) => {
           />
           </Link>
           <CustomButton 
-            buttonName="Another Action"
+            buttonName="Delete User"
             style={{
               backgroundColor: "#68D391",
               color: "#FFFFFF",

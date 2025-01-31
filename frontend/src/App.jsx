@@ -5,6 +5,11 @@ import LandingPage from './pages/LandingPage.jsx'
 import SubjectPage from './pages/SubjectPage.jsx'
 import Lenis from "@studio-freight/lenis"
 import CustomCursor from './components/CustomCursor.jsx'
+import LoginPage from './pages/LoginPage.jsx'
+import { Routes, Route } from 'react-router-dom';
+import UserPage from './pages/UserPage.jsx'
+import ContentPage from './pages/ContentPage.jsx'
+import MCQ from './pages/MCQ.jsx'
 const App = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const preLoaderRef = useRef()
@@ -35,18 +40,38 @@ const App = () => {
         navbarDown();
       }
     });
-    const handleMouseMove = (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
+    return () => {
+      window.removeEventListener('mousemove', (e) => {
+        setMousePosition({ x: e.clientX, y: e.clientY });
+      });
+      window.removeEventListener('wheel', (e) => {
+        if(e.deltaY > 0){
+          
+          navbarUp();
+        } else {
+          navbarDown();
+        }
+      });
+    }
   }, [])
 
   return (
-    <div className="app-container">
-      {/* <Preloader /> */}
-      {/* <LandingPage /> */}
-      {/* <SubjectsCard /> */}
-      <SubjectPage />
-    </div>
+    <>
+    <CustomCursor x={mousePosition.x} y={mousePosition.y}  />
+    <Preloader />
+    
+    
+    
+    
+    <Routes>
+      <Route path="/" element={<LoginPage />} />
+      <Route path="/MCQ" element={<MCQ />} />
+      <Route path="/LandingPage" element={<LandingPage />} />
+      <Route path="/UserPage" element={<UserPage />} />
+      <Route path='/SubjectPage' element={<SubjectPage />} ></Route>
+    </Routes>
+    </>
+    
   )
 }
 export default App
