@@ -142,7 +142,7 @@ useEffect(() => {
             <h1 className='text-white ' >Moon Beam</h1>
             <h1 className='text-white ' >Academy</h1>
         </div>
-        <div className='Description h-[80%] w-[45%] flex border-[1px] rounded-3xl text-white border-white items-center text-4xl 'style={{
+        <div className='Description h-[80%] w-[45%] flex border-[1px] rounded-3xl text-white border-white items-center text-2xl 'style={{
           padding : '2vh'
         }} >
             <p className=''>

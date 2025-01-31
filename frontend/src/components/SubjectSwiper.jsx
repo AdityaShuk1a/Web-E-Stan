@@ -54,9 +54,38 @@ const SubjectSwiper = () => {
             id: 3,
             title: "Mathematics",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 1,
+            title: "English",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 2,
+            title: "Science", 
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 3,
+            title: "Mathematics",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 1,
+            title: "English",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 2,
+            title: "Science", 
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 3,
+            title: "Mathematics",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
         }
     ];
-
     return (
         <div className="Slider w-full flex justify-center items-center flex-nowrap overflow-x-auto">
             {subjects.map((subject) => {
@@ -70,5 +99,4 @@ const SubjectSwiper = () => {
         </div>
     );
 };
-
 export default SubjectSwiper;

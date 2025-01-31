@@ -3,35 +3,35 @@ import UserCard from '../components/UserCard'
 import {gsap} from "gsap"
 
 const UserPage = () => {
-  useEffect(() => {
-    const tl = gsap.timeline()
-    tl.fromTo('.title', {
-      opacity : 0,
-      y : -100,
-      duration : 1,
-      ease : "power2.out"
-    }, {
-      opacity : 1,
-      y : 0,
-      duration : 1,
-      ease : "power2.out",
-      toggleActions : "play reverse play reverse"
-    })
-    tl.fromTo('.users', {
-      opacity : 0,
-      y : -100,
-      duration : 1,
-      ease : "power2.out"
-    }, {
-      opacity : 1,
-      y : 0,
-      duration : 1,
-      ease : "power2.out",
-      stagger : 0.5,
-      toggleActions : "play reverse play reverse"
-    })
+  // useEffect(() => {
+  //   const tl = gsap.timeline()
+  //   tl.fromTo('.title', {
+  //     opacity : 0,
+  //     y : -100,
+  //     duration : 1,
+  //     ease : "power2.out"
+  //   }, {
+  //     opacity : 1,
+  //     y : 0,
+  //     duration : 1,
+  //     ease : "power2.out",
+  //     toggleActions : "play reverse play reverse"
+  //   })
+  //   tl.fromTo('.users', {
+  //     opacity : 0,
+  //     y : -100,
+  //     duration : 1,
+  //     ease : "power2.out"
+  //   }, {
+  //     opacity : 1,
+  //     y : 0,
+  //     duration : 1,
+  //     ease : "power2.out",
+  //     stagger : 0.5,
+  //     toggleActions : "play reverse play reverse"
+  //   })
 
-  })
+  // })
 
   const useData = [
     {
