@@ -1,0 +1,158 @@
+{
+  "Math": {
+    "preschool": [
+      {
+        "chapter": "Numbers",
+        "topics": [
+          {
+            "title": "Counting from 1 to 10",
+            "reading_material": "Read the numbers from 1 to 10. Use your fingers to count.",
+            "mcq_assessment": {
+              "questions": [
+                {
+                  "question": "What number comes after 5?",
+                  "options": ["4", "6", "7", "5"],
+                  "correct_answer": "6"
+                },
+                {
+                  "question": "How many fingers do you have?",
+                  "options": ["8", "10", "12", "5"],
+                  "correct_answer": "10"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "1stGrade": [
+      {
+        "chapter": "Addition",
+        "topics": [
+          {
+            "title": "Adding single-digit numbers",
+            "reading_material": "Learn how to add numbers like 2 + 3. Start with small numbers.",
+            "mcq_assessment": {
+              "questions": [
+                {
+                  "question": "What is 2 + 3?",
+                  "options": ["4", "5", "6", "3"],
+                  "correct_answer": "5"
+                },
+                {
+                  "question": "What is 7 + 1?",
+                  "options": ["7", "8", "6", "5"],
+                  "correct_answer": "8"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "English": {
+    "preschool": [
+      {
+        "chapter": "Alphabet",
+        "topics": [
+          {
+            "title": "Recognizing letters",
+            "reading_material": "Learn the alphabet from A to Z. Look at the pictures and identify each letter.",
+            "mcq_assessment": {
+              "questions": [
+                {
+                  "question": "Which letter comes after A?",
+                  "options": ["B", "C", "A", "D"],
+                  "correct_answer": "B"
+                },
+                {
+                  "question": "Which letter is the first in the alphabet?",
+                  "options": ["Z", "A", "M", "B"],
+                  "correct_answer": "A"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "1stGrade": [
+      {
+        "chapter": "Nouns",
+        "topics": [
+          {
+            "title": "Common and Proper Nouns",
+            "reading_material": "Learn the difference between common nouns (like 'dog') and proper nouns (like 'Tom').",
+            "mcq_assessment": {
+              "questions": [
+                {
+                  "question": "Which is a proper noun?",
+                  "options": ["city", "cat", "London", "book"],
+                  "correct_answer": "London"
+                },
+                {
+                  "question": "Which is a common noun?",
+                  "options": ["Bob", "Paris", "dog", "Monday"],
+                  "correct_answer": "dog"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "Science": {
+    "preschool": [
+      {
+        "chapter": "Animals",
+        "topics": [
+          {
+            "title": "Farm animals",
+            "reading_material": "Learn about animals found on a farm like cows, chickens, and sheep.",
+            "mcq_assessment": {
+              "questions": [
+                {
+                  "question": "Which animal gives us milk?",
+                  "options": ["Cow", "Chicken", "Duck", "Horse"],
+                  "correct_answer": "Cow"
+                },
+                {
+                  "question": "Which animal says 'Baa'?",
+                  "options": ["Sheep", "Dog", "Cat", "Pig"],
+                  "correct_answer": "Sheep"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "1stGrade": [
+      {
+        "chapter": "Plants",
+        "topics": [
+          {
+            "title": "Parts of a plant",
+            "reading_material": "Learn about the roots, stem, leaves, and flowers of a plant.",
+            "mcq_assessment": {
+              "questions": [
+                {
+                  "question": "What part of the plant is below the soil?",
+                  "options": ["Root", "Stem", "Leaf", "Flower"],
+                  "correct_answer": "Root"
+                },
+                {
+                  "question": "What part of the plant makes food?",
+                  "options": ["Stem", "Root", "Leaf", "Flower"],
+                  "correct_answer": "Leaf"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

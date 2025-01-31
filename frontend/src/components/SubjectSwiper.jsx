@@ -40,7 +40,7 @@ const SubjectSwiper = () => {
     }, []); // Added dependency array to useEffect
 
     const subjects = [
-        {
+    {
             id: 1,
             title: "English",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
@@ -52,22 +52,7 @@ const SubjectSwiper = () => {
         },
         {
             id: 3,
-            title: "Mathematics",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 1,
-            title: "English",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 2,
-            title: "Science", 
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 3,
-            title: "Mathematics",
+            title: "Maths",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
         },
         {
@@ -82,7 +67,67 @@ const SubjectSwiper = () => {
         },
         {
             id: 3,
-            title: "Mathematics",
+            title: "Maths",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 1,
+            title: "English",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 2,
+            title: "Science", 
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 3,
+            title: "Maths",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 1,
+            title: "English",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 2,
+            title: "Science", 
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 3,
+            title: "Maths",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 1,
+            title: "English",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 2,
+            title: "Science", 
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 3,
+            title: "Maths",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 1,
+            title: "English",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 2,
+            title: "Science", 
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
+        },
+        {
+            id: 3,
+            title: "Maths",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
         }
     ];
