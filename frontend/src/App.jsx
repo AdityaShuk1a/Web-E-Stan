@@ -43,17 +43,12 @@ const App = () => {
   }, [])
 
   return (
-    <>
-    <CustomCursor x={mousePosition.x} y={mousePosition.y}  />
-    <Preloader />
     <div className="app-container">
-    <Navbar />
-      <LandingPage />
+      {/* <Preloader /> */}
+      {/* <LandingPage /> */}
       {/* <SubjectsCard /> */}
-      {/* <SubjectPage /> */}
+      <SubjectPage />
     </div>
-    </>
-    
   )
 }
 export default App
