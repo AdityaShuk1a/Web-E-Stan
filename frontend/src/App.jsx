@@ -47,7 +47,7 @@ const App = () => {
       {/* <LandingPage /> */}
       {/* <SubjectsCard /> */}
       {/* <SubjectPage /> */}
-      <ChapterPage />
+      {/* <ChapterPage /> */}
     </div>
   )
 }
