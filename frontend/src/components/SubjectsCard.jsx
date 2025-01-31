@@ -25,14 +25,14 @@ const SubjectsCard = ({subject}) => {
     <>
     
     <div className='h-[35vh] Card sm:h-[40vh] lg:h-[45vh] w-[25vw] rounded-4xl sm:w-[30vw] lg:w-[37vw] overflow-hidden flex items-center justify-center relative bg-amber-200' >
-        <div className="Part1 h-full w-full bg-pink-200">
+        <div className="Part1 h-full w-full bg-[#252227]">
             
         </div>
-        <div className="Part2 h-full flex flex-col gap-[3vh] sm:gap-[5vh] lg:gap-[4vh] items-center justify-center w-full z-[999] bg-red-400">
+        <div className="Part2 h-full flex flex-col gap-[3vh] sm:gap-[5vh] lg:gap-[4vh] items-center justify-center w-full z-[999] bg-[#696969]">
             <div className="SubjectName flex text-2xl sm:text-4xl lg:text-7xl font-semibold flex-row gap-[1vh] sm:gap-[1.5vh] lg:gap-[2vh]" >
-                <h1>{subject.title}</h1>
+                <h1 className='text-[#161616]'>{subject.title}</h1>
             </div>
-            <div className='StartLearningBtn bg-blue-300 rounded-4xl text-base sm:text-lg lg:text-xl' style={{
+            <div className='StartLearningBtn text-white bg-[#252227] rounded-4xl text-base sm:text-lg lg:text-xl' style={{
                 padding: "1vh 1.5vh",
                 '@media (min-width: 640px)': {
                     padding: "1.25vh 2vh"

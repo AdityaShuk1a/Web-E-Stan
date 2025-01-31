@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Navbar from "../components/Navbar";
 
 const topics = [
   "Algebra", "Geometry", "Trigonometry", "Calculus", "Probability",
@@ -9,7 +10,9 @@ const SubjectPage = () => {
   const [isGlowing, setIsGlowing] = useState(false); // Added state for glowing effect
 
   return (
-    <div className="h-[100vh] bg-gray-100 flex flex-col">
+    <>
+    <Navbar />
+    <div className="h-[100vh] bg-transparent flex flex-col">
       {/* Main container with full height */}
       <div className="flex flex-col h-full px-4">
         {/* Header Section - 20% of viewport height */}
@@ -72,6 +75,7 @@ const SubjectPage = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
