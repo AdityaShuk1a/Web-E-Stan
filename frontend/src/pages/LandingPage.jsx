@@ -7,6 +7,7 @@ import SubjectSwiper from '../components/SubjectSwiper.jsx'
 const LandingPage = () => {
   return (
     <>
+    <Navbar />
     <RisingMoon />
     <div className='h-[100vh] w-screen flex justify-center items-center' >
     <SubjectSwiper />

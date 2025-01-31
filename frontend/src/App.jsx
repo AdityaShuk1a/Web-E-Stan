@@ -2,12 +2,14 @@ import React, { useEffect, useRef, useState } from 'react'
 import Preloader from './components/Preloader'
 import { PreloaderAnimation, navbarUp, navbarDown } from './animations/Animations'
 import LandingPage from './pages/LandingPage.jsx'
-import Navbar from './components/Navbar.jsx'
-import SubjectsCard from './components/SubjectsCard.jsx'
 import SubjectPage from './pages/SubjectPage.jsx'
 import Lenis from "@studio-freight/lenis"
 import CustomCursor from './components/CustomCursor.jsx'
-import SubjectSwiper from './components/SubjectSwiper.jsx'
+import LoginPage from './pages/LoginPage.jsx'
+import { Routes, Route } from 'react-router-dom';
+import UserPage from './pages/UserPage.jsx'
+import ContentPage from './pages/ContentPage.jsx'
+import MCQ from './pages/MCQ.jsx'
 const App = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const preLoaderRef = useRef()
@@ -57,13 +59,18 @@ const App = () => {
     <>
     <CustomCursor x={mousePosition.x} y={mousePosition.y}  />
     <Preloader />
-    <div className="app-container">
-    <Navbar />
-      <LandingPage /> 
-      {/* <SubjectsCard /> */}
-       {/* <SubjectPage /> */}
-     </div>
-    {/* <SubjectSwiper /> */}
+    
+    
+    
+    
+    <Routes>
+      {/* <Route path="/" element={<LoginPage />} /> */}
+      {/* <Route path="/" element={<ContentPage />} /> */}
+      <Route path="/" element={<MCQ />} />
+      <Route path="/LandingPage" element={<LandingPage />} />
+      <Route path="/UserPage" element={<UserPage />} />
+      <Route path='/SubjectPage' element={<SubjectPage />} ></Route>
+    </Routes>
     </>
     
   )

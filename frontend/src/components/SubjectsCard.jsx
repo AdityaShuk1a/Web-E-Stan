@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import {gsap} from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import {Link} from 'react-router-dom'
 gsap.registerPlugin(ScrollTrigger)
 
 const SubjectsCard = ({subject}) => {
@@ -16,12 +17,14 @@ const SubjectsCard = ({subject}) => {
                 trigger: '.Card',
                 start: 'top 50%',
                 end: 'bottom bottom',
+                toggleActions: "play none none reverse"
             }
         })
         }, [])
   return (
     <>
-    <div className='h-[35vh] Card sm:h-[40vh] lg:h-[45vh] w-[25vw] rounded-4xl sm:w-[30vw] lg:w-[35vw] overflow-hidden flex items-center justify-center relative bg-amber-200' >
+    
+    <div className='h-[35vh] Card sm:h-[40vh] lg:h-[45vh] w-[25vw] rounded-4xl sm:w-[30vw] lg:w-[37vw] overflow-hidden flex items-center justify-center relative bg-amber-200' >
         <div className="Part1 h-full w-full bg-pink-200">
             
         </div>
@@ -38,7 +41,10 @@ const SubjectsCard = ({subject}) => {
                     padding: "1.5vh 2.5vh"
                 }
             }} >
+                <Link to='/SubjectPage' >
                 Start Learning
+                </Link>
+                
             </div>
         </div>
         <div className="Circle absolute z-[1] border-black" style={{
@@ -63,6 +69,8 @@ const SubjectsCard = ({subject}) => {
             }}
         />
     </div>
+    
+    
     </>
   )
 }
