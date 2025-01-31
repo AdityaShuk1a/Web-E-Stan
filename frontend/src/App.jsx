@@ -2,11 +2,10 @@ import React, { useEffect, useRef, useState } from 'react'
 import Preloader from './components/Preloader'
 import { PreloaderAnimation, navbarUp, navbarDown } from './animations/Animations'
 import LandingPage from './pages/LandingPage.jsx'
-import Navbar from './components/Navbar.jsx'
-import SubjectsCard from './components/SubjectsCard.jsx'
 import SubjectPage from './pages/SubjectPage.jsx'
 import Lenis from "@studio-freight/lenis"
 import CustomCursor from './components/CustomCursor.jsx'
+import ChapterPage from './pages/ChapterPage.jsx'
 const App = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const preLoaderRef = useRef()
@@ -43,17 +42,13 @@ const App = () => {
   }, [])
 
   return (
-    <>
-    <CustomCursor x={mousePosition.x} y={mousePosition.y}  />
-    <Preloader />
     <div className="app-container">
-    <Navbar />
-      <LandingPage />
+      <Preloader />
+      {/* <LandingPage /> */}
       {/* <SubjectsCard /> */}
       {/* <SubjectPage /> */}
+      <ChapterPage />
     </div>
-    </>
-    
   )
 }
 export default App

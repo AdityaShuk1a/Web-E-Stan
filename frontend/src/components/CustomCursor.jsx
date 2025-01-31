@@ -1,5 +1,8 @@
 import React, { useEffect } from 'react'
 import {gsap} from 'gsap'
+import { motion } from "framer-motion"
+import { useNavigate } from 'react-router-dom'
+import CustomButton from './CustomButton'
 const CustomCursor = ({x, y}) => {
     useEffect(() => {
         gsap.from('.CustomCursor', {
