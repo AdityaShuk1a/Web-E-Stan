@@ -5,7 +5,9 @@ import cookieParser from "cookie-parser";
 import authRouter from "./routes/authRouter.js";
 import { mongoURL ,port } from "./config.js";
 import userRouter from "./routes/userRouter.js";
-
+import childRouter from "./routes/childRoutes.js";
+import assessmentRouter from "./routes/assessmentRoutes.js";
+import quizRouter from "./routes/quizRoutes.js";
 const app = express();
 app.use(
   cors({
@@ -25,6 +27,9 @@ app.get('/', (req, res) => {
 });
 app.use("/api/auth", authRouter);
 app.use("/api/user", userRouter);
+app.use("/api/child", childRouter);
+app.use("/api/assessment", assessmentRouter);
+app.use("/api/quiz", quizRouter);
 
 const mongoConnect = async () => {
   try {
@@ -39,3 +44,4 @@ const mongoConnect = async () => {
 };
 
 mongoConnect();
+

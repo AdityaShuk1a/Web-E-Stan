@@ -2,61 +2,61 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <footer className="px-4 divide-y dark:bg-gray-100 dark:text-gray-800">
+        <footer className=" bottom-0 left-0 right-0 px-4 divide-y dark:bg-gray-100 dark:text-gray-800 h-48"> {/* Increased height and made position fixed */}
         <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0" bis_skin_checked="1">
             <div className="lg:w-1/3" bis_skin_checked="1">
                 <a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
                     <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600" bis_skin_checked="1">
                         <img src="\src\assets\moon.png" alt="" />
                     </div>
-                    <span className="self-center text-2xl font-semibold">MoonBeam Academy</span>
+                    <span className="self-center text-5xl font-semibold">MoonBeam Academy</span> {/* Increased text size */}
                 </a>
             </div>
-            <div className="grid grid-cols-2 text-sm gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4" bis_skin_checked="1">
+            <div className="grid grid-cols-2 text-lg gap-x-3 gap-y-8 lg:w-2/3 sm:grid-cols-4" bis_skin_checked="1"> {/* Increased text size */}
                 <div className="space-y-3" bis_skin_checked="1">
-                    <h3 className="tracking-wide uppercase dark:text-gray-900">Product</h3>
+                    <h3 className="tracking-wide uppercase dark:text-gray-900 text-lg">Product</h3> {/* Increased text size */}
                     <ul className="space-y-1">
                         <li>
-                            <a rel="noopener noreferrer" href="#">Features</a>
+                            <a rel="noopener noreferrer" href="#" className="text-lg">Features</a> {/* Increased text size */}
                         </li>
                         <li>
-                            <a rel="noopener noreferrer" href="#">Integrations</a>
+                            <a rel="noopener noreferrer" href="#" className="text-lg">Integrations</a> {/* Increased text size */}
                         </li>
                         <li>
-                            <a rel="noopener noreferrer" href="#">Pricing</a>
+                            <a rel="noopener noreferrer" href="#" className="text-lg">Pricing</a> {/* Increased text size */}
                         </li>
                         <li>
-                            <a rel="noopener noreferrer" href="#">FAQ</a>
+                            <a rel="noopener noreferrer" href="#" className="text-lg">FAQ</a> {/* Increased text size */}
                         </li>
                     </ul>
                 </div>
                 <div className="space-y-3" bis_skin_checked="1">
-                    <h3 className="tracking-wide uppercase dark:text-gray-900">Company</h3>
+                    <h3 className="tracking-wide uppercase dark:text-gray-900 text-lg">Company</h3> {/* Increased text size */}
                     <ul className="space-y-1">
                         <li>
-                            <a rel="noopener noreferrer" href="#">Privacy</a>
+                            <a rel="noopener noreferrer" href="#" className="text-lg">Privacy</a> {/* Increased text size */}
                         </li>
                         <li>
-                            <a rel="noopener noreferrer" href="#">Terms of Service</a>
+                            <a rel="noopener noreferrer" href="#" className="text-lg">Terms of Service</a> {/* Increased text size */}
                         </li>
                     </ul>
                 </div>
                 <div className="space-y-3" bis_skin_checked="1">
-                    <h3 className="uppercase dark:text-gray-900">Developers</h3>
+                    <h3 className="uppercase dark:text-gray-900 text-lg">Developers</h3> {/* Increased text size */}
                     <ul className="space-y-1">
                         <li>
-                            <a rel="noopener noreferrer" href="#">Public API</a>
+                            <a rel="noopener noreferrer" href="#" className="text-lg">Public API</a> {/* Increased text size */}
                         </li>
                         <li>
-                            <a rel="noopener noreferrer" href="#">Documentation</a>
+                            <a rel="noopener noreferrer" href="#" className="text-lg">Documentation</a> {/* Increased text size */}
                         </li>
                         <li>
-                            <a rel="noopener noreferrer" href="#">Guides</a>
+                            <a rel="noopener noreferrer" href="#" className="text-lg">Guides</a> {/* Increased text size */}
                         </li>
                     </ul>
                 </div>
                 <div className="space-y-3" bis_skin_checked="1">
-                    <div className="uppercase dark:text-gray-900" bis_skin_checked="1">Social media</div>
+                    <div className="uppercase dark:text-gray-900 text-lg" bis_skin_checked="1">Social media</div> {/* Increased text size */}
                     <div className="flex justify-start space-x-3" bis_skin_checked="1">
                         <a rel="noopener noreferrer" href="#" title="Facebook" className="flex items-center p-1">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 32 32" className="w-5 h-5 fill-current">
@@ -77,10 +77,9 @@ const Footer = () => {
                 </div>
             </div>
         </div>
-        <div className="py-6 text-sm text-center dark:text-gray-600" bis_skin_checked="1">© 1968 Company Co. All rights reserved.</div>
+        <div className="py-6 text-lg text-center dark:text-gray-600" bis_skin_checked="1">© 1968 Company Co. All rights reserved.</div> {/* Increased text size */}
     </footer>
     );
   };
   
   export default Footer;
-  
