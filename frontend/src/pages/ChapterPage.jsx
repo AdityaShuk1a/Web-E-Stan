@@ -5,8 +5,8 @@ const ChapterPage = () => {
     const exams = ['Exam1', 'Exam2', 'Exam3'];
 
     return (
-        <div className="h-screen bg-transparent text-white flex justify-center items-center">
-            <div className="p-12 bg-[#252227] rounded-lg shadow-lg w-full max-w-4xl h-[70vh] flex flex-col justify-start items-center mt-12">
+        <div className="h-screen bg-transparent text-white flex justify-center items-center ">
+            <div className="p-12 bg-[#252227] rounded-lg shadow-lg w-full max-w-4xl h-[70vh] flex flex-col justify-start items-center mt-12 border-[#333]">
                 <h1 className="text-4xl font-semibold text-center mb-12" style={{ padding: '40px'  }}>Chapters & Exams</h1>
                 {topics.map((topic, index) => (
                     <div key={index} className="flex justify-center items-center mb-8 w-full">
