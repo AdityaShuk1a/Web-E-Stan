@@ -5,7 +5,6 @@ const topics = [
   "Statistics", "Linear Algebra", "Differential Equations", "Combinatorics",
   "Set Theory"
 ];
-
 const SubjectPage = () => {
   const [isGlowing, setIsGlowing] = useState(false); // Added state for glowing effect
 
@@ -31,7 +30,6 @@ const SubjectPage = () => {
             </svg>
           </button>
         </div>
-
         {/* Content Section */}
         <div className="ContentSection flex flex-col sm:flex-row gap-8 p-8 flex-grow">
           {/* Left Side - Topics Section */}
@@ -42,7 +40,6 @@ const SubjectPage = () => {
                 <h2 className="DropdownTitle text-xl font-semibold text-purple-800">Select Class</h2>
               </div>
             </div>
-
             {/* Topics Grid (Uniform Tile Size) */}
             <div className="flex-grow overflow-y-auto min-h-0 mt-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -60,7 +57,6 @@ const SubjectPage = () => {
               </div>
             </div>
           </div>
-
           {/* Right Side - Chatbot */}
           <div className="RightSide w-full sm:w-1/2 bg-amber-50 rounded-xl shadow-lg p-8 flex flex-col border-2 border-amber-200">
             <div className="ChatArea flex-grow flex flex-col">
