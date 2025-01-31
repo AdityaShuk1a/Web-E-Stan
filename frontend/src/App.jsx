@@ -10,6 +10,8 @@ import { Routes, Route } from 'react-router-dom';
 import UserPage from './pages/UserPage.jsx'
 import ContentPage from './pages/ContentPage.jsx'
 import MCQ from './pages/MCQ.jsx'
+import { UserProvider } from './context/UserContext';
+
 const App = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const preLoaderRef = useRef()
@@ -56,22 +58,21 @@ const App = () => {
   }, [])
 
   return (
-    <>
-    <CustomCursor x={mousePosition.x} y={mousePosition.y}  />
-    <Preloader />
-    
-    
-    
-    
-    <Routes>
-      <Route path="/" element={<LoginPage />} />
-      <Route path="/MCQ" element={<MCQ />} />
-      <Route path="/LandingPage" element={<LandingPage />} />
-      <Route path="/UserPage" element={<UserPage />} />
-      <Route path='/SubjectPage' element={<SubjectPage />} ></Route>
-    </Routes>
-    </>
-    
+    <UserProvider>
+      <CustomCursor x={mousePosition.x} y={mousePosition.y}  />
+      <Preloader />
+      
+      
+      
+      
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/MCQ" element={<MCQ />} />
+        <Route path="/LandingPage" element={<LandingPage />} />
+        <Route path="/UserPage" element={<UserPage />} />
+        <Route path='/SubjectPage' element={<SubjectPage />} ></Route>
+      </Routes>
+    </UserProvider>
   )
 }
 export default App

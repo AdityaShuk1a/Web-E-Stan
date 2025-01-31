@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import CustomButton from './CustomButton'
 import { Link } from 'react-router-dom'
 const UserCard = ({user}) => {
+  
   return (
     <div className='border-2 border-black' style={{
         display: "flex",

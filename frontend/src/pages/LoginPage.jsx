@@ -1,8 +1,18 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { UserContext } from '../context/UserContext'; // Create this file
+
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+  const { setUser } = useContext(UserContext);
+  
+  // Check if UserContext is properly set
+  if (!setUser) {
+    console.error('UserContext is not properly initialized.');
+  }
+  
   const [loginEmail, setLoginEmail] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
   const [username, setUsername] = useState('');
@@ -13,15 +23,16 @@ const LoginPage = () => {
   const [lastName, setLastName] = useState('');
   const [contactNo, setContactNo] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     const loginData = { email: loginEmail, password: loginPassword };
     try {
-      console.log(loginData)
-      await axios.post('http://localhost:5000/posttask', loginData);
-      
+      const response = await axios.post('http://localhost:5000/posttask', loginData);
+      if (response.data) {
+        setUser(response.data); // Store user data in context
+        navigate('/UserPage');
+      }
     } catch (error) {
       console.error('Login error:', error);
     }
@@ -30,14 +41,17 @@ const LoginPage = () => {
   const handleSignupSubmit = async (e) => {
     e.preventDefault();
     const signupData = {
-      userName : username,
+      userName: username,
       userEmail: signupEmail,
       userPassword: signupPassword,
-      
     };
     try {
-      console.log(signupData)
-      await axios.post('http://localhost:3000/api/auth/register', signupData);
+      const response = await axios.post('http://localhost:3000/api/auth/register', signupData);
+      console.log(response.data)
+      
+        setUser(response.data); // Store user data in context
+        navigate('/UserPage');
+      
     } catch (error) {
       console.error('Signup error:', error);
     }
@@ -80,9 +94,7 @@ const LoginPage = () => {
             </div>
             <div className="flex justify-center">
               <button type="submit" className="w-[20vh] h-[6vh] bg-blue-600 text-white rounded-md hover:bg-blue-700 text-2xl font-bold" style={{ padding: "1vh" }}>
-                <Link to="/UserPage">
                 Login
-                </Link>
               </button>
             </div>
           </form>
@@ -180,9 +192,7 @@ const LoginPage = () => {
 
             <div className="flex justify-center">
               <button type="submit" className="w-[20vh] h-[6vh] bg-green-600 text-white rounded-md hover:bg-green-700 text-2xl font-bold" style={{ padding: "1vh" }}>
-                <Link to="/UserPage">
                 Sign Up
-                </Link>
               </button>
             </div>
           </form>
