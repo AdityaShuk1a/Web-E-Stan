@@ -1,201 +1,61 @@
-import React, { useState, useContext } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
-import { UserContext } from '../context/UserContext'; // Create this file
-
-
 const LoginPage = () => {
-  const navigate = useNavigate();
-  const { setUser } = useContext(UserContext);
-  
-  // Check if UserContext is properly set
-  if (!setUser) {
-    console.error('UserContext is not properly initialized.');
-  }
-  
-  const [loginEmail, setLoginEmail] = useState('');
-  const [loginPassword, setLoginPassword] = useState('');
-  const [username, setUsername] = useState('');
-  const [signupEmail, setSignupEmail] = useState('');
-  const [signupPassword, setSignupPassword] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [middleName, setMiddleName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [contactNo, setContactNo] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-
-  const handleLoginSubmit = async (e) => {
-    e.preventDefault();
-    const loginData = { email: loginEmail, password: loginPassword };
-    try {
-      const response = await axios.post('http://localhost:5000/posttask', loginData);
-      if (response.data) {
-        setUser(response.data); // Store user data in context
-        navigate('/UserPage');
-      }
-    } catch (error) {
-      console.error('Login error:', error);
-    }
-  };
-
-  const handleSignupSubmit = async (e) => {
-    e.preventDefault();
-    const signupData = {
-      userName: username,
-      userEmail: signupEmail,
-      userPassword: signupPassword,
-    };
-    try {
-      const response = await axios.post('http://localhost:3000/api/auth/register', signupData);
-      console.log(response.data)
-      
-        setUser(response.data); // Store user data in context
-        navigate('/UserPage');
-      
-    } catch (error) {
-      console.error('Signup error:', error);
-    }
-  };
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-transparent font-[Host Grotesk] p-4">
-      <div className="flex flex-col lg:flex-row w-full max-w-6xl gap-8">
-        {/* Login Form */}
-        <div className="w-full lg:w-1/2 bg-white rounded-xl shadow-xl p-8" style={{ padding: "4vh" }}>
-          <h4 className="text-7xl font-extrabold text-white mb-8">Login</h4>
-          <form className="space-y-6" onSubmit={handleLoginSubmit}>
-            <div>
-              <label className="block text-gray-600 font-bold text-2xl mb-2">Email</label>
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                value={loginEmail}
-                onChange={(e) => setLoginEmail(e.target.value)}
-                className="w-full h-[8vh] px-4 border rounded-md placeholder-black placeholder-bold focus:outline-none focus:ring-2 text-xl" 
-              />
+    <div className=" min-h-screen flex items-center justify-center" style={{ padding: "0.5rem" }}>
+      <div className="flex flex-col md:flex-row items-center justify-center" style={{ margin: "0.5rem", padding: "0" }}>
+        {/* Sign In Card */}
+        <div className="bg-gray-900 text-white rounded-lg shadow-lg h-[500px] relative" style={{ margin: "0.5rem", padding: "2vh" }}>
+          <div className="absolute top-0 left-0 right-0 h-20 bg-gray-900 rounded-t-lg" style={{ margin: "0", padding: "0" }}></div>
+          <div className="relative z-10" style={{ marginTop: "2rem", padding: "0" }}>
+            <h2 className="text-2xl font-bold" style={{ marginBottom: "2rem", padding: "0" }}>Hello there, welcome back</h2>
+            <form>
+              <div style={{ marginBottom: "1rem", padding: "0" }}>
+                <label className="block text-sm" style={{ marginBottom: "0.5rem", padding: "0" }}>E-mail</label>
+                <input type="email" className="w-full p-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-blue-500" style={{ margin: "0", padding: "0" }} />
+              </div>
+              <div style={{ marginBottom: "1rem", padding: "0" }}>
+                <label className="block text-sm" style={{ marginBottom: "0.5rem", padding: "0" }}>Password</label>
+                <input type="password" className="w-full p-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-blue-500" style={{ margin: "0", padding: "0" }} />
+              </div>
+              <div className="text-right" style={{ marginBottom: "1rem", padding: "0" }}>
+                <a href="#" className="text-sm text-blue-400 hover:underline" style={{ margin: "0", padding: "0" }}>Forgot your Password?</a>
+              </div>
+              <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded shadow-lg" style={{ margin: "0", padding: "0" }}>Sign In</button>
+            </form>
+            <div className="text-center" style={{ marginTop: "1rem", padding: "0" }}>
+              <p className="text-sm" style={{ margin: "0", padding: "0" }}>New here? <a href="#" className="text-blue-400 hover:underline" style={{ margin: "0", padding: "0" }}>Sign Up instead</a></p>
             </div>
-            <div>
-              <label className="block text-gray-600 font-bold text-2xl mb-2">Password</label>
-              <input 
-                type="password" 
-                placeholder="Enter your password" 
-                value={loginPassword}
-                onChange={(e) => setLoginPassword(e.target.value)}
-                className="w-full h-[8vh] px-4 border rounded-md placeholder-black placeholder-bold focus:outline-none focus:ring-2 text-xl" 
-              />
-            </div>
-            <div className="flex items-center space-x-2">
-              <a 
-                href="/otp-verification"
-                className="text-blue-600 hover:text-blue-800 cursor-pointer font-bold text-xl"
-              >
-                Verify Email
-              </a>
-            </div>
-            <div className="flex justify-center">
-              <button type="submit" className="w-[20vh] h-[6vh] bg-blue-600 text-white rounded-md hover:bg-blue-700 text-2xl font-bold" style={{ padding: "1vh" }}>
-                Login
-              </button>
-            </div>
-          </form>
+          </div>
         </div>
 
-        {/* Sign Up Form */}
-        <div className="w-full lg:w-1/2 bg-white rounded-xl shadow-xl p-8" style={{ padding: "4vh" }}>
-          <h4 className="text-7xl font-extrabold text-white mb-8">Sign Up</h4>
-          <form className="space-y-6" onSubmit={handleSignupSubmit}>
-            <div>
-              <label className="block text-gray-600 font-bold text-2xl mb-2">Username</label>
-              <input 
-                type="text" 
-                placeholder="Choose a username" 
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
-                className="w-full h-[8vh] px-4 border rounded-md placeholder-black placeholder-bold focus:outline-none focus:ring-2 text-xl" 
-              />
-            </div>
-            <div>
-              <label className="block text-gray-600 font-bold text-2xl mb-2">Email</label>
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                value={signupEmail}
-                onChange={(e) => setSignupEmail(e.target.value)}
-                className="w-full h-[8vh] px-4 border rounded-md placeholder-black placeholder-bold focus:outline-none focus:ring-2 text-xl" 
-              />
-            </div>
-            <div>
-              <label className="block text-gray-600 font-bold text-2xl mb-2">Password</label>
-              <input 
-                type="password" 
-                placeholder="Enter your password" 
-                value={signupPassword}
-                onChange={(e) => setSignupPassword(e.target.value)}
-                className="w-full h-[8vh] px-4 border rounded-md placeholder-black placeholder-bold focus:outline-none focus:ring-2 text-xl" 
-              />
-            </div>
-
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="w-full md:w-1/3">
-                <label className="block text-gray-600 font-bold text-2xl mb-2">First Name</label>
-                <input 
-                  type="text" 
-                  placeholder="John" 
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  className="w-full h-[8vh] px-4 border rounded-md placeholder-black placeholder-bold focus:outline-none focus:ring-2 text-xl" 
-                />
+        {/* Sign Up Card */}
+        <div className="bg-gray-900 text-white rounded-lg shadow-lg h-[500px] w-full max-w-md relative" style={{ margin: "0.5rem", padding: "2vh" }}>
+          <div className="absolute top-0 left-0 right-0 h-20 bg-gray-900 rounded-t-lg" style={{ margin: "0", padding: "0" }}></div>
+          <div className="relative z-10" style={{ marginTop: "2rem", padding: "0" }}>
+            <h2 className="text-2xl font-bold" style={{ marginBottom: "2rem", padding: "0" }}>Get on Board</h2>
+            <form>
+              <div style={{ marginBottom: "1rem", padding: "0" }}>
+                <label className="block text-sm" style={{ marginBottom: "0.5rem", padding: "0" }}>Name</label>
+                <input type="text" className="w-full p-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-blue-500" style={{ margin: "0", padding: "0" }} />
               </div>
-              <div className="w-full md:w-1/3">
-                <label className="block text-gray-600 font-bold text-2xl mb-2">Middle Name</label>
-                <input 
-                  type="text" 
-                  placeholder="M." 
-                  value={middleName}
-                  onChange={(e) => setMiddleName(e.target.value)}
-                  className="w-full h-[8vh] px-4 border rounded-md placeholder-black placeholder-bold focus:outline-none focus:ring-2 text-xl" 
-                />
+              <div style={{ marginBottom: "1rem", padding: "0" }}>
+                <label className="block text-sm" style={{ marginBottom: "0.5rem", padding: "0" }}>E-mail</label>
+                <input type="email" className="w-full p-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-blue-500" style={{ margin: "0", padding: "0" }} />
               </div>
-              <div className="w-full md:w-1/3">
-                <label className="block text-gray-600 font-bold text-2xl mb-2">Last Name</label>
-                <input 
-                  type="text" 
-                  placeholder="Doe" 
-                  value={lastName}
-                  onChange={(e) => setLastName(e.target.value)}
-                  className="w-full h-[8vh] px-4 border rounded-md placeholder-black placeholder-bold focus:outline-none focus:ring-2 text-xl" 
-                />
+              <div style={{ marginBottom: "1rem", padding: "0" }}>
+                <label className="block text-sm" style={{ marginBottom: "0.5rem", padding: "0" }}>Enter Password</label>
+                <input type="password" className="w-full p-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-blue-500" style={{ margin: "0", padding: "0" }} />
               </div>
-            </div>
-
-            <div>
-              <label className="block text-gray-600 font-bold text-2xl mb-2">Contact No.</label>
-              <input 
-                type="tel" 
-                placeholder="Enter your phone number" 
-                value={contactNo}
-                onChange={(e) => setContactNo(e.target.value)}
-                className="w-full h-[8vh] px-4 border rounded-md placeholder-black placeholder-bold focus:outline-none focus:ring-2 text-xl" 
-              />
-            </div>
-
-            <div>
-              <label className="block text-gray-600 font-bold text-2xl mb-2">Confirm Password</label>
-              <input 
-                type="password" 
-                placeholder="Confirm your password" 
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                className="w-full h-[8vh] px-4 border rounded-md placeholder-black placeholder-bold focus:outline-none focus:ring-2 text-xl" 
-              />
-            </div>
-
-            <div className="flex justify-center">
-              <button type="submit" className="w-[20vh] h-[6vh] bg-green-600 text-white rounded-md hover:bg-green-700 text-2xl font-bold" style={{ padding: "1vh" }}>
-                Sign Up
-              </button>
-            </div>
-          </form>
+              <div style={{ marginBottom: "1rem", padding: "0" }}>
+                <label className="block text-sm" style={{ marginBottom: "0.5rem", padding: "0" }}>Confirm Password</label>
+                <input type="password" className="w-full p-2 rounded bg-gray-800 border border-gray-700 focus:outline-none focus:border-blue-500" style={{ margin: "0", padding: "0" }} />
+              </div>
+              <div className="text-sm text-gray-400" style={{ marginBottom: "1rem", padding: "0" }}>
+                By creating an account, you agree to the <a href="#" className="text-blue-400 hover:underline" style={{ margin: "0", padding: "0" }}>Terms and Use</a> and <a href="#" className="text-blue-400 hover:underline" style={{ margin: "0", padding: "0" }}>Privacy Policy</a>.
+              </div>
+              <button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded shadow-lg" style={{ margin: "0", padding: "0" }}>Sign Up</button>
+            </form>
+            
+          </div>
         </div>
       </div>
     </div>
@@ -203,3 +63,4 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+

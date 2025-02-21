@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'; // Added useEffect import
+import React, { useEffect } from 'react';
 import SubjectsCard from './SubjectsCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -6,142 +6,51 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const SubjectSwiper = () => {
-    useEffect(() => { // Moved useEffect inside the component
-        const tl = gsap.timeline();
-        tl.fromTo('.Slider', {
-            x : -100,
-            duration : 1,
-            ease : "power2.out",
-            scrollTrigger : {
-                trigger : '.Slider',
-                start : "top 50%",
-                end : "bottom bottom",
-                scrub : 1,
-                pin : true,
-            },
-        } , {
-            x : 0,
-            duration : 1,
-            ease : "power2.out",
-            scrollTrigger : {
-                trigger : '.Slider',
-                start : "top 50%",
-                end : "bottom bottom",
-                scrub : 1,
-                pin : true,
-            }
-        }
-    );
-    }, []); // Added dependency array to useEffect
+    useEffect(() => {
+        gsap.fromTo('.Slider', {
+            x: -100,
+            opacity: 0
+        }, {
+            x: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out"
+        });
+    }, []);
 
     const subjects = [
-    {
-            id: 1,
-            title: "English",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 2,
-            title: "Science", 
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 3,
-            title: "Maths",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 1,
-            title: "English",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 2,
-            title: "Science", 
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 3,
-            title: "Maths",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 1,
-            title: "English",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 2,
-            title: "Science", 
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 3,
-            title: "Maths",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 1,
-            title: "English",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 2,
-            title: "Science", 
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 3,
-            title: "Maths",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 1,
-            title: "English",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 2,
-            title: "Science", 
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 3,
-            title: "Maths",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 1,
-            title: "English",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 2,
-            title: "Science", 
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        },
-        {
-            id: 3,
-            title: "Maths",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar"
-        }
+        { id: 1, title: "English", description: "Learn English with fun and engaging content." },
+        { id: 2, title: "Science", description: "Explore the wonders of science with interactive lessons." },
+        { id: 3, title: "Maths", description: "Master mathematics with step-by-step tutorials." }
     ];
+
     return (
-        <div className="Slider w-full flex justify-center items-center flex-nowrap overflow-x-auto">
-            {subjects.map((subject) => {
-                console.log(subject); // ✅ Log outside JSX
-                return (
-                    <div key={subject.id} className='gap-[4vh]' style={{ marginRight: "20vh" }}>
+        <div className="w-full flex flex-col items-center">
+            <h2 className="text-3xl sm:text-4xl font-bold text-center my-6">Our Courses</h2>
+            <Swiper
+                modules={[Navigation, Pagination, Autoplay]}
+                spaceBetween={10}
+                slidesPerView={1}
+                navigation
+                pagination={{ clickable: true }}
+                autoplay={{ delay: 3000 }}
+                breakpoints={{
+                    640: { slidesPerView: 1 },
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 }
+                }}
+                className="w-full"
+            >
+                {subjects.map((subject) => (
+                    <SwiperSlide key={subject.id} className="flex justify-center">
                         <SubjectsCard subject={subject} />
-                    </div>
-                );
-            })}
+                    </SwiperSlide>
+                ))}
+            </Swiper>
         </div>
     );
 };
+
 export default SubjectSwiper;

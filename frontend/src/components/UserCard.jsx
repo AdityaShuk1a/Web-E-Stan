@@ -1,14 +1,13 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import CustomButton from './CustomButton'
 import { Link } from 'react-router-dom'
 const UserCard = ({user}) => {
-  
   return (
     <div className='border-2 border-black' style={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        width: "30vw",
+        
         minWidth: "27vw",
         height: "45vh",
         padding: "2vw",

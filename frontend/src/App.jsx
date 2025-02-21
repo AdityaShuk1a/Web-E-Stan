@@ -61,10 +61,6 @@ const App = () => {
     <UserProvider>
       <CustomCursor x={mousePosition.x} y={mousePosition.y}  />
       <Preloader />
-      
-      
-      
-      
       <Routes>
         <Route path="/" element={<LoginPage />} />
         <Route path="/MCQ" element={<MCQ />} />

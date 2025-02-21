@@ -1,78 +1,60 @@
-import React, { useEffect } from 'react'
-import {gsap} from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import {Link} from 'react-router-dom'
-gsap.registerPlugin(ScrollTrigger)
+import React, { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Link } from 'react-router-dom';
+gsap.registerPlugin(ScrollTrigger);
 
-const SubjectsCard = ({subject}) => {
+const SubjectsCard = ({ subject }) => {
     useEffect(() => {
-        gsap.fromTo('.Card', {
-            opacity: 0,
-            y: 100,
-        }, {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            scrollTrigger: {
-                trigger: '.Card',
-                start: 'top 50%',
-                end: 'bottom bottom',
-                toggleActions: "play none none reverse"
-            }
-        })
-        }, [])
-  return (
-    <>
-    
-    <div className='h-[35vh] Card sm:h-[40vh] lg:h-[45vh] w-[25vw] rounded-4xl sm:w-[30vw] lg:w-[37vw] overflow-hidden flex items-center justify-center relative bg-amber-200' >
-        <div className="Part1 h-full w-full bg-[#252227]">
-            
-        </div>
-        <div className="Part2 h-full flex flex-col gap-[3vh] sm:gap-[5vh] lg:gap-[4vh] items-center justify-center w-full z-[999] bg-[#696969]">
-            <div className="SubjectName flex text-2xl sm:text-4xl lg:text-7xl font-semibold flex-row gap-[1vh] sm:gap-[1.5vh] lg:gap-[2vh]" >
-                <h1 className='text-[#161616]'>{subject.title}</h1>
-            </div>
-            <div className='StartLearningBtn text-white bg-[#252227] rounded-4xl text-base sm:text-lg lg:text-xl' style={{
-                padding: "1vh 1.5vh",
-                '@media (min-width: 640px)': {
-                    padding: "1.25vh 2vh"
+        gsap.fromTo(
+            `.Card-${subject.id}`,
+            { opacity: 0, y: 100 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: `.Card-${subject.id}`,
+                    start: 'top 80%',
+                    end: 'bottom bottom',
+                    toggleActions: 'play none none reverse',
                 },
-                '@media (min-width: 1024px)': {
-                    padding: "1.5vh 2.5vh"
-                }
-            }} >
-                <Link to='/SubjectPage' >
-                Start Learning
-                </Link>
-                
+            }
+        );
+    }, [subject.id]);
+
+    return (
+        <div className={`Card-${subject.id} bg-white shadow-lg rounded-lg border border-black`} style={{padding: "1rem", margin: "1rem 1rem"}}>
+            <div className="flex items-center justify-between">
+                <div className="flex flex-col items-start">
+                    <div className="flex items-center space-x-2">
+                        <i className="fas fa-paper-plane text-3xl text-gray-800"></i>
+                        <h1 className="text-3xl font-bold text-blue-600">{subject.title}</h1>
+                    </div>
+                    <p className="text-gray-500">{subject.description}</p>
+                </div>
+                <div className="relative w-32 h-32">
+                    <div className="absolute  rounded-full m-4 border border-black" style={{
+                        width : "15vh",
+                        marginTop: "5vh"
+                    }}>
+                        <img src="/src/assets/full-moon.png" style={{
+                            
+                        }}alt="Full Moon" className="rounded-full"/>
+                    </div>
+                </div>
+            </div>
+            <div className="flex items-center mt-4">
+                <i className="fas fa-globe text-blue-600"></i>
+                <p className="ml-2 text-gray-600">www.yourwebsite.com</p>
+            </div>
+            <div className="" style={{
+                margin: "1vh"
+            }}>
+                <Link to='/SubjectPage' className="text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition" style={{padding : "0.6vh"}}>Start Learning</Link>
             </div>
         </div>
-        <div className="Circle absolute z-[1] border-black" style={{
-            height: '55%',
-            width: '55%',
-            borderRadius: '50%',
-            borderWidth: 'min(1.5vh, 4px)',
-            left: '58%',
-            top: '50%',
-            transform: 'translate(-50%, -50%)'
-        }}>
-        </div>
-        <img 
-            className='PlanetImage absolute z-[2]' 
-            src="\src\assets\full-moon.png" 
-            alt="" 
-            style={{
-                height: '27.5%',
-                left: '25%',
-                top: '50%',
-                transform: 'translate(-50%, -50%)'
-            }}
-        />
-    </div>
-    
-    
-    </>
-  )
-}
+    );
+};
 
-export default SubjectsCard
+export default SubjectsCard;
